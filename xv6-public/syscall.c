@@ -136,11 +136,11 @@ void
 syscall(void)
 {
   int num;
-  char * name[]={"fork", "exit", "wait", "pipe", "read", "kill", "exec", "fstat", "chdir", "dup", "getpaid", "sbrk", "sleep", "uptime", "open", "write", "mknod", "unlink", "link", "mkdir", "close", "shutdown", "reboot"};
+  //char * name[]={"fork", "exit", "wait", "pipe", "read", "kill", "exec", "fstat", "chdir", "dup", "getpaid", "sbrk", "sleep", "uptime", "open", "write", "mknod", "unlink", "link", "mkdir", "close", "shutdown", "reboot"};
   struct proc *curproc = myproc();
 
   num = curproc->tf->eax;
-  cprintf(" %s -> n%d \n",name[num-1], num -1);
+  //cprintf(" %s -> n%d \n",name[num-1], num -1);
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
     curproc->tf->eax = syscalls[num]();
   } else {
