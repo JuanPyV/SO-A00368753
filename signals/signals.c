@@ -21,7 +21,7 @@ int main(){
             sleep(1);
         }
         printf("Ya sali\n");
-        for(;;);
+
     }else{
         sleep(1);
         printf("Soy el padre \n");
